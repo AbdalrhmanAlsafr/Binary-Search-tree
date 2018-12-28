@@ -19,7 +19,7 @@ namespace ConsoleApp3
                 Console.Write(Data + " ");
             }
         }
-        public  class BinarySearchTree
+       public class BinarySearchTree
         {
             public Node root;
             public BinarySearchTree()
@@ -47,14 +47,15 @@ namespace ConsoleApp3
                                 parent.Left = newNode;
                                 break;
                             }
-                            else
+                          
+                        }
+                        else
+                        {
+                            current = current.Right;
+                            if (current == null)
                             {
-                                current = current.Right;
-                                if (current == null)
-                                {
-                                    parent.Right = newNode;
-                                    break;
-                                }
+                                parent.Right = newNode;
+                                break;
                             }
                         }
                     }
@@ -62,7 +63,6 @@ namespace ConsoleApp3
             }
 
         }
-
         static void Main(string[] args)
         {
             BinarySearchTree binarysearch = new BinarySearchTree();
